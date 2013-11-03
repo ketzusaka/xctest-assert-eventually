@@ -52,7 +52,7 @@ assertEventuallyWithBlock(^{
 
 ### Adjusting the timeout
 
-The default timeout is 1 second. To adjust it use the assertEventuallyWithBlockAndTimeout method, and set the timeout, in seconds, in the second argument:
+The default timeout is 2 seconds. To adjust it use the assertEventuallyWithBlockAndTimeout method, and set the timeout, in seconds, in the second argument:
 
 ```objective-c
 assertEventuallyWithBlockAndTimeout(^{ return bool;}, 10);
