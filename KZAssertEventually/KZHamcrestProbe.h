@@ -12,12 +12,11 @@
 #import "KZProbe.h"
 
 @interface KZHamcrestProbe : NSObject <KZProbe>
-@property (nonatomic, strong, readonly) id pointerToActualObject;
 @property (nonatomic, strong, readonly) id<HCMatcher> matcher;
 @property (nonatomic, readonly, getter = isSatisfied) BOOL satisfied;
 
-+ (instancetype) probeWithObjectPointer:(id)objectPtr matcher:(id<HCMatcher>)matcher;
-- (instancetype) initWithObjectPointer:(id)objectPtr matcher:(id<HCMatcher>)aMatcher;
++ (instancetype) probeWithObjectPointer:(__strong id *)objectPtr matcher:(id<HCMatcher>)matcher;
+- (instancetype) initWithObjectPointer:(__strong id *)objectPtr matcher:(id<HCMatcher>)aMatcher;
 - (instancetype) actualObject;
 @end
 

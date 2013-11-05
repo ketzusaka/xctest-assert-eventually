@@ -62,11 +62,23 @@ assertEventuallyWithBlockAndTimeout(^{ return bool;}, 10);
 If you'd like to use the Hamcrest matcher instead of the block matcher the syntax is:
 
 ```objective-c
-assertEventuallyThat(object, equalTo(otherObject));
+assertEventuallyThat(&object, equalTo(otherObject));
 ```
 
 And with a timeout:
 
 ```objective-c
-assertEventuallyThat(object, equalTo(otherObject), 10);
+assertEventuallyThat(&object, equalTo(otherObject), 10);
+```
+
+Here's a more complete example where we use GCD to make the assertion pass after a second:
+```objective-c
+__block NSString *string;
+double delayInSeconds = 1.0;
+dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+  string = @"test";
+});
+
+assertEventuallyThat(&string, equalTo(@"test"));
 ```
