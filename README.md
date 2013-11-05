@@ -56,6 +56,7 @@ The default timeout is 2 seconds. To adjust it use the assertEventuallyWithBlock
 
 ```objective-c
 assertEventuallyWithBlockAndTimeout(^{ return bool;}, 10);
+```
 
 ### Hamcrest matcher
 
