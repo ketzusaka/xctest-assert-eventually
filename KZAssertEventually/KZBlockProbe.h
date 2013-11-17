@@ -23,3 +23,6 @@ assertEventuallyWithTimeout([KZBlockProbe probeWithBlock:block], timeout)
 
 #define assertEventuallyWithBlock(block) \
 assertEventually([KZBlockProbe probeWithBlock:block])
+
+#define assertEventuallyWithRemoteBlock(testCase, block) \
+        KZ_assertEventuallyWithLocation(testCase, __FILE__, __LINE__, [KZBlockProbe probeWithBlock:block])
