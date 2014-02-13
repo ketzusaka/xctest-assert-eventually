@@ -83,3 +83,6 @@ dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
 
 assertEventuallyThat(&string, equalTo(@"test"));
 ```
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ketzusaka/xctest-assert-eventually/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
